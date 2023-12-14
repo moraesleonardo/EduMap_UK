@@ -1,0 +1,30 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block css_links %}
+<link rel="stylesheet" href="{% static 'libs/leaflet/leaflet.css' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block js_links %}
+<script src="{% static 'libs/leaflet/leaflet.js' %}"></script>
+<script src="{% static 'javascript/main.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="grid-container">
+  <div class="grid-1">
+    <div id="map"></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="column-menu" id="menu-information">
+      <p id="menu_title">Prezado estudante! Bem vindo ao EduMap_UK</p>
+      
+      <img id='placeimage' src="./media/place_images/lon.webp" alt="London image">
+      
+      <p id="menu_text"></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
