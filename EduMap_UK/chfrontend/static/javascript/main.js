@@ -70,7 +70,7 @@ function init() {
       onEachFeature: (feature, layer) => {
         let cityName = feature.properties.name;
         let proximity = feature.properties.proximity;
-        layer.bindPopup(`City name: ${cityName}, <br/> proximity: ${proximity}`);
+        layer.bindPopup(`Nome da Cidade: ${cityName}, Distância: ${proximity}`);
       }
     }).addTo(map)
   }
@@ -89,7 +89,7 @@ function init() {
   const onEachFeatureHandler = (feature, layer) => {
     // Popup for feature - on click display the feature name
     let placeName = feature.properties.place_name
-    layer.bindPopup(`Place name is <br/><center><b>${placeName}</b></center>`)
+    layer.bindPopup(`</b>${placeName}</b>`)
     // No image available source
     let noImageAvailable = './media/place_images/no_image_available.jpg';
 
