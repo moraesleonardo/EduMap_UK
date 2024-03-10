@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+#map {
+  height: 100vh;
+  width: 100%; /* Ajuste para responsividade */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Ajuste para responsividade */
+  grid-template-rows: auto; /* Ajuste para responsividade */
+}
+
+/* Columns */
+.grid-1, .grid-2 {
+  height: 100%;
+  width: 100%;
+}
+
+.column-menu {
+  height: 100%;
+  width: 100%;
+  padding: 1px;
+  background-color: #eae2e2;
+}
+
+#menu_title, #menu_text {
+  margin: 0;
+  padding: 40px 10px; /* Ajuste de padding para responsividade */
+  width: 100%;
+  text-align: center; /* Centralizar texto */
+}
+
+#menu_title {
+  height: 20%;
+  font-size: 28px;
+}
+
+#placeimage {
+  width: 100%; /* Faz a imagem ocupar a largura total do contêiner */
+  height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+  object-fit: contain; /* Garante que a imagem seja visível */
+  border-radius: 10px; /* Mantém o estilo de borda arredondada */
+}
+
+
+#menu_text {
+  height: 20%;
+  font-size: 22px;
+  text-align: left;
+}
+
+  @media (max-width: 768px) {
+    .column-menu {
+      padding: 10px; /* Reduz o padding em telas menores se necessário */
+    }
+  }
+  
+  
+  #map {
+      width: 55vw; /* Restaura o tamanho original para telas maiores */
+  }
+

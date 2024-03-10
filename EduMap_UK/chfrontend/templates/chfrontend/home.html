@@ -1,0 +1,83 @@
+{% extends './base.html' %} {% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block css_links %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'libs/leaflet/leaflet.css' %}">
+{% endblock %}
+
+{% block js_links %}
+{{ block.super }}
+<script src="{% static 'libs/leaflet/leaflet.js' %}"></script>
+<script src="{% static 'javascript/main.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container py-3">
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+      
+        <span class="fs-4">EduMap_UK</span>
+      </a>
+  
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+      
+       
+  
+      </nav>
+    </div>
+  </div>
+<!-- Conteúdo sobre EduMap_UK -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <p class="lead">Explore o universo educacional do Reino Unido com facilidade. EduMap_UK oferece um guia abrangente para instituições de ensino, facilitando sua jornada para encontrar o curso e a universidade perfeitos.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Formulário de Login -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4 ">
+            <div class="card shadow-lg">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0">Login</h3>
+                </div>
+                <div class="card-body">
+                    <form action="{% url 'chfrontend:login' %}" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username:</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    Não tem uma conta? <a href="{% url 'chfrontend:register' %}" class="text-success">Cadastre-se aqui</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-3">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-3 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+        <span class="text-muted">© 2024 Company, Inc</span>
+      </div>
+    </footer>
+    </div>
+
+{% endblock %}
