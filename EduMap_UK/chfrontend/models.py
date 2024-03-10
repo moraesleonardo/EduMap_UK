@@ -1,6 +1,5 @@
 from django.db import models
 
-<<<<<<< HEAD
 class Curso(models.Model):
     DURACAO_CHOICES = [
         ('1', '1 ano'),
@@ -45,6 +44,3 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.nome
-=======
-# Create your models here.
->>>>>>> fe5208ff891556a6d785ae0dee2c775a13fb0bed

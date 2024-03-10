@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.contrib import messages
-<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from .models import Curso
 
@@ -12,8 +11,6 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import Curso
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-=======
->>>>>>> fe5208ff891556a6d785ae0dee2c775a13fb0bed
 
 # View para a página inicial
 def home(request):
@@ -56,7 +53,6 @@ def user_login(request):
             messages.error(request, 'Usuário ou senha inválidos. Por favor, tente novamente ou realize um novo cadastro.')
             return redirect('chfrontend:home')
     return render(request, 'chfrontend/home.html')
-<<<<<<< HEAD
 
 
 
@@ -84,5 +80,3 @@ def excluir_curso(request, curso_id):
         curso = Curso.objects.get(pk=curso_id)
         curso.delete()
         return redirect('chfrontend:listar_cursos')  # Substitua 'nome_da_url_para_a_lista_de_cursos' pela URL correspondente à lista de cursos
-=======
->>>>>>> fe5208ff891556a6d785ae0dee2c775a13fb0bed
